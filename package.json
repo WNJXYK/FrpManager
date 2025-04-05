@@ -16,7 +16,7 @@
     "electron"
   ],
   "author": "",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "build": {
     "appId": "dev.zhouz.frpmanager",
     "mac": {
