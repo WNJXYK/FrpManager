@@ -277,7 +277,7 @@ const App: React.FC = () => {
           onClick={toggleAutoStart}
           sx={{ mb: 2 }}
         >
-          {autoStart ? '开机自启动' : '关闭自启动'}
+          {autoStart ? '开机自启动' : '开机不自启动'}
         </Button>
         <Box sx={{ display: 'inline-block', width: '10px' }} />
         <Button
