@@ -224,7 +224,11 @@ const App: React.FC = () => {
    */
   const handleToggleRunning = async (config: FrpConfig) => {
     try {
-      await ipcRenderer.invoke('toggle-frp', config);
+      if (config.isRunning) {
+        await ipcRenderer.invoke('stop-frp', config);
+      } else {
+        await ipcRenderer.invoke('start-frp', config);
+      }
     } catch (err: any) {
       setError('操作失败: ' + err.message);
     }
@@ -290,11 +294,19 @@ const App: React.FC = () => {
               <ListItemText
                 primary={config.name}
                 secondary={
-                  <Chip
-                    label={config.isRunning ? '运行中' : '已停止'}
-                    color={config.isRunning ? 'success' : 'default'}
-                    size="small"
+                  <>
+                    <Chip
+                      label={config.isRunning ? '运行中' : '已停止'}
+                      color={config.isRunning ? 'success' : 'default'}
+                      size="small"
                   />
+                  <Box sx={{ display: 'inline-block', width: '10px' }} />
+                  <Chip
+                    label={config.autoStart ? '自启动' : '不自启动'}
+                    color={config.autoStart ? 'success' : 'default'}
+                      size="small"
+                    />
+                  </>
                 }
               />
               <ListItemSecondaryAction>
@@ -315,7 +327,11 @@ const App: React.FC = () => {
                 <IconButton
                   edge="end"
                   aria-label="删除"
-                  onClick={() => handleDeleteConfig(config.id)}
+                  onClick={() => {
+                    if (window.confirm(`确定要删除配置 "${config.name}" 吗？`)) {
+                      handleDeleteConfig(config.id);
+                    }
+                  }}
                 >
                   <DeleteIcon />
                 </IconButton>
