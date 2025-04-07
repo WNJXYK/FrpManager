@@ -1,16 +1,20 @@
 # FRP Manager
 
-一个用于管理 FRP 客户端的 MacOS 应用程序。
+---
+[![GitHub release](https://img.shields.io/github/tag/WNJXYK/FrpManager.svg?label=release)](https://github.com/WNJXYK/FrpManager/releases) 
+[![Frp version](https://img.shields.io/badge/frp-0.61.2-blue)](https://github.com/fatedier/frp/releases/tag/v0.61.2)
+---
 
-## 功能特性
+MacOS (M系列芯片) 下的 [Frp](https://github.com/fatedier/frp) 图形界面客户端。
 
-- 系统托盘常驻
-- 管理多个 FRP 客户端配置
-- 启动/停止 FRP 客户端
-- 编辑 FRP 配置文件
-- 查看 FRP 运行日志
+## :sparkles: 功能
 
-## 开发
+* :pencil2: 简易的编辑界面，快速完成配置
+* :play_or_pause_button: 系统托盘快捷控制
+* 📚 多 Frp Client 配置文件管理
+* :computer: 开机自启动 & Frp Client 随程序自启动
+
+## :wrench: 开发
 
 ### 环境要求
 
@@ -35,16 +39,6 @@ npm run dev
 npm run package
 ```
 
-## 使用说明
+## :page_facing_up: 许可证
 
-1. 点击系统托盘图标可以快速启动/停止 FRP 客户端
-2. 点击"主界面"可以打开配置管理界面
-3. 在配置管理界面可以：
-   - 添加新的 FRP 配置
-   - 编辑现有配置
-   - 删除配置
-   - 查看运行日志
-
-## 许可证
-
-Apache License 2.0.
+Apache License 2.0

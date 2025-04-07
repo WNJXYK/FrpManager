@@ -37,8 +37,7 @@ import {
   Delete as DeleteIcon,
   Edit as EditIcon,
   Memory as MemoryIcon,
-  Info as InfoIcon,
-  CheckBox
+  Info as InfoIcon
 } from '@mui/icons-material';
 
 /**
